@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title></title>
+    <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="http://d3js.org/d3.v7.min.js"></script>
+    <script src="js/tableData.js"></script>
+  </head>
+  <body>
+    <div class="firstFlex">
+            <div class="menuFlex">
+              <div class="menuItem"><a href="index.html">Главная</a>
+              </div>
+              <div class="menuItem"><a href="Таблица.html">Таблица</a>
+              </div>
+              <div class="menuItem"><a href="ДебютРети.html">Дебют Рети</a>
+              </div>
+              <div class="menuItem"><a href="Галерея.html">Галерея</a>
+              </div>
+            </div>
+      <div class="centralBlock">
+        <form>
+          <ul>
+            <li>Расположить по:</li>
+            <label> 
+              <input type="radio" name="quest_1" value="ascending" checked>Возрастанию
+            </label>
+            <label> 
+              <input type="radio" name="quest_1" value="descending">Убыванию
+            </label>
+            <li>Сортировка первого уровня по:</li>
+            <label> 
+              <input type="radio" name="quest_2" value="number" checked>Номеру
+            </label>
+            <label> 
+              <input type="radio" name="quest_2" value="debut">Дебюту
+            </label>
+            <label>
+              <input type="radio" name="quest_2" value="moves">Ходам
+            </label>
+            <label>
+              <input type="radio" name="quest_2" value="parties">Количеству партий
+            </label>
+            <label>
+              <input type="radio" name="quest_2" value="percent">Проценту побед
+            </label>
+            <label>
+              <input type="radio" name="quest_2" value="openness">Открытости
+            </label>
+            <li>Сортировка второго уровня по:</li>
+            <label> 
+              <input type="radio" name="quest_3" value="number">Номеру
+            </label>
+            <label> 
+              <input type="radio" name="quest_3" value="debut" checked>Дебюту
+            </label>
+            <label> 
+              <input type="radio" name="quest_3" value="moves">Ходам
+            </label>
+            <label> 
+              <input type="radio" name="quest_3" value="parties">Количеству партий
+            </label>
+            <label> 
+              <input type="radio" name="quest_3" value="percent">Проценту побед
+            </label>
+            <label> 
+              <input type="radio" name="quest_3" value="openness">Открытости
+            </label>
+          </ul>
+          <button onclick="superSort()" type="button">Сортировать</button><br>
+          <button onclick="functionGraph()" type="button">График</button>
+        </form>
+        <div> 
+          <div class="main">
+            <input type="text" name="filterText">
+            <!--select(id="toFilter" onchange="filter(this.value)")-->
+            <select id="toFilter"></select>
+            <button onclick="filter()" type="button">Фильтровать</button>
+            <button onclick="reset_filter()" type="button">Сброс фильтра</button>
+            <table>
+              <thead></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+        <footer>
+          <script src="js/newSort.js"></script>
+        </footer>
+      </div>
+    </div>
+    <!--.centralBlock-->
+    <!--	include menuBar-->
+    <!--	+createMenuBar(title)-->
+    <!--	block content-->
+  </body>
+</html>
